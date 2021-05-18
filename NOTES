@@ -1,0 +1,9 @@
+PROBABLY I NEED BETTER WAVESPEEDS!!!!!!!!!! 
+(It crashes where u \approx 0, so where "a" matters the most in the wavespeeds..)
+
+NOTES:
+It crashes even if I pump up n and P by a factor 10000, at the very same spot. Therefore it's not numerical bad conditioning.
+
+Reaches sigma = 1.0d0
+
+The wavespeed is computed using Pxx only. Try using (Pxx+Pyy+Pzz)/3

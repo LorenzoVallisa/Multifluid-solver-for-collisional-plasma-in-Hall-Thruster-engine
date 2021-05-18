@@ -1,0 +1,36 @@
+! Residual analysis
+if(SYS_EULER_MF_BOOL)THEN
+
+    if ((log10(res_rho_el) .lt. toll ) .and. (log10(res_rho_i) .lt. toll) .and. (current_time .gt. 0.5d0*t_end)) THEN
+
+      write(*,*) "--------------------------------------------------------------"
+      write(*,*) "             SIMULATION HAS CONVERGED!!! "
+      WRITE(*,*) "---------------------------------------------------------------"
+      WRITE(*,*) "Density residuals :"
+      WRITE(*,*) "Electrons :",log10(res_rho_el)
+      WRITE(*,*) "Ions :",log10(res_rho_i)
+      WRITE(*,*) "Energy residuals :"
+      WRITE(*,*) "Electrons :",log10(res_ene_el)
+      WRITE(*,*) "Ions :",log10(res_ene_i)
+      WRITE(*,*) "Final time :",current_time
+      stop
+
+    end if
+
+else
+
+    if ((log10(res_rho_el) .lt. toll ).and. (current_time .gt. 0.5d0*t_end)) THEN
+
+      write(*,*) "--------------------------------------------------------------"
+      write(*,*) "             SIMULATION HAS CONVERGED!!! "
+      WRITE(*,*) "---------------------------------------------------------------"
+      WRITE(*,*) "Density residuals :"
+      WRITE(*,*) "Electrons :",log10(res_rho_el)
+      WRITE(*,*) "Energy residuals :"
+      WRITE(*,*) "Electrons :",log10(res_ene_el)
+      WRITE(*,*) "Final time :",current_time
+      stop
+
+    end if
+
+end if

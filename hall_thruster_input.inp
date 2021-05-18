@@ -1,0 +1,25 @@
+500
+-1.0
+1.0
+uniform   ! Chebyshev1 vs uniform
+open
+Euler_multi_fluid    ! Euler for single fluid ; Euler_multi_fluid for multi-fluid
+0.0d0
+0.0000001     ! 100 ns for dispersion ; 100 micros for collision
+20000
+ForwardEuler
+1
+1.6666667  ! for cold , 3 for hot
+9.10938356d-31
+-1.60217662d-19
+100
+esc  ! esc adds self-consistent electric to force term - force instead considers only forcing term (con force i seguenti due input possono essere arbitrari)
+20  ! Anode potential
+0  ! Cathode potential
+continous  ! discontinous SOD SHOCK ; continous all uniform
+collisionP  ! collisionP considers collisional (elastic - ionizing) term with precise calculations through Boltzmann operator; peace has no collision included in src term ; collisionA considers approximated collision(elastic) frequency through thermal velocity, NOT YET IMPLMENTED FOR MULTIFLUID; no_coll does nothing
+2d19        ! Neutral background density number [1/m^3]
+1.4
+2.18e-25
+1.60217662d-19
+500   ! neutrals_background_speed (100-1000 m/s)

@@ -1,0 +1,15 @@
+500
+0.0
+10.0
+uniform
+open
+Euler
+0.0d0
+0.001d0
+17203
+ForwardEuler
+1
+1.4
+2.18e-25
+0.0d0
+100

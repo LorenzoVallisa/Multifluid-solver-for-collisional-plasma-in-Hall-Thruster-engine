@@ -1,0 +1,53 @@
+0.5                                    ! Max CFL ions that decides physical dt (CFL_INP_IONS)
+100                                     ! Max physical electrons CFL to use in DTS scheme (CFL_PHYS_MAX)
+0.5                                    ! Max CFL electrons that decides physical dt for explicit scheme (CFL_INP_ELECTRONS)
+100.0d0                                     ! Starting Numerical CFL for electrons (CFL_NUM_EL)
+-5.0                                      ! Tolerance for convergence criteria of subiterations (TOLL)
+0.3d0                                  ! Relaxaction Factor (relaxation_factor)
+TS
+1                                       ! Number of ions subiterations
+1.1
+1.1
+
+! Hall-Thruster B (Caso O - Partenza)
+
+
+100                                     ! Max physical electrons CFL to use in DTS scheme (CFL_PHYS_MAX)
+0.5                                    ! Max CFL electrons that decides physical dt for explicit scheme (CFL_INP_ELECTRONS)
+10.0d0                                     ! Starting Numerical CFL for electrons (CFL_NUM_EL)
+-5.0                                      ! Tolerance for convergence criteria of subiterations (TOLL)
+0.35d0                                  ! Relaxaction Factor (relaxation_factor)
+TS
+1                                       ! Number of ions subiterations
+1.1
+1.1
+
+! Hall-Thruster NO B (SECOND CHOICE - OK - con charac 2d7)
+
+0.5                                    ! Max CFL ions that decides physical dt (CFL_INP_IONS)
+100                                     ! Max physical electrons CFL to use in DTS scheme (CFL_PHYS_MAX)
+0.5                                    ! Max CFL electrons that decides physical dt for explicit scheme (CFL_INP_ELECTRONS)
+20                                     ! Starting Numerical CFL for electrons (CFL_NUM_EL)
+-5.0                                      ! Tolerance for convergence criteria of subiterations (TOLL)
+0.3d0                                  ! Relaxaction Factor (relaxation_factor)
+TS
+1                                       ! Number of ions subiterations
+1.1
+1.1
+
+! Hall-Thruster NO B (ORIGINAL PARAMETERS - OK - con charac 2d7)
+
+
+
+0.5                                    ! Max CFL ions that decides physical dt (CFL_INP_IONS)
+100                                     ! Max physical electrons CFL to use in DTS scheme (CFL_PHYS_MAX)
+0.5                                    ! Max CFL electrons that decides physical dt for explicit scheme (CFL_INP_ELECTRONS)
+20                                     ! Starting Numerical CFL for electrons (CFL_NUM_EL)
+-5.0                                      ! Tolerance for convergence criteria of subiterations (TOLL)
+0.3d0                                  ! Relaxaction Factor (relaxation_factor)
+TS
+1                                       ! Number of ions subiterations
+1.1
+1.1
+
+! Hall-Thruster conf1

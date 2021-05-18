@@ -1,0 +1,106 @@
+9.1095d-16          .
+2.18d-10
+0.04d0
+9.6306d5
+300.0d0
+0.020
+0.1
+9.8205d5        ! Thermal electronic velocity
+402.50d0        ! Thermal ionic velocity
+9.8205d5
+
+
+! Hall-Thruster con B ( Caso O - Partenza)
+
+9.1095d-16 ! 1.8218767119d-13         .
+2.18d-10
+0.025d0
+9.6306d6
+300.0d0
+0.020
+0.1
+2.1236d7        ! Thermal electronic velocity
+219.90d0        ! Thermal ionic velocity
+2.1236d7
+
+
+! Hall-Thruster no B
+
+1.8219d-16            .
+4.359d-11
+0.036d0
+2.6306d6
+0.0528
+0.01
+0.1
+1
+1
+8.7032d4
+
+
+!Simulazione Pietro Sim_P
+
+1.0d0        .
+1.0d0
+0.04d0
+9.6306d6
+300.0d0
+0.020
+0.1
+2.1236d7        ! Thermal electronic velocity
+219.90d0        ! Thermal ionic velocity
+2.1236d7
+
+
+! Sod-Shock Bomber
+
+
+
+
+9.1094d0          .
+9.1094d0
+0.02d0
+2.6306d6
+0.0528
+0.01
+0.1
+1
+1
+0.87032d0
+
+
+!Sod-Shock Test Implicit - DTS
+
+2.180d-10
+0.04d0
+2.6306d6
+0.430664129900984
+0.01
+0.1
+1
+1
+355381
+
+!Standard
+
+DEFAULT SET
+
+nu_ref at 300 K
+
+2.6306d6 [1/s]
+
+phi_carac
+
+->at 300 K
+
+0.0528 [V]
+
+->at 5000 K
+
+0.430664129900984[V]
+
+sound speed ELECTRONS
+
+355381 [m/s] 5000K
+
+8.7032d4 [m/s]  300K

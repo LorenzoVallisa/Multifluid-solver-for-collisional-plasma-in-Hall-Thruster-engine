@@ -1,0 +1,96 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#
+# Questo è uno script bash, quindi ogni riga viene interpretata come un comando bash
+# a meno che il primo carattere della riga non sia un "#"
+# nel qual caso bash interpreta la riga come un commento, ignorandola.
+# Se però la riga inizia con "#PBS" allora quello che segue è una direttiva per Torque/PBS
+# Quando questo script viene sottomesso a una coda di Torque/PBS, il file viene eseguito
+# dalla bash su un unico nodo, quindi deve essere cura dell'utilizzatore di propagare
+# le eventuali istruzioni di definizione dell'ambiente sugli altri nodi (se ne viene richiesto
+# più di uno)
+# This is a bash script, thus every row is a bash command
+# unless the first character of the row is a "#" : 
+# in this case the row is a bash comment.
+# However, if a row starts with "#PBS" then is a Pbs/Torque directive
+# When submitted to Pbs/Torque, this file will be executed by a bash shell 
+# on one node only, so the user must take care of propagating the needed instructions
+# on every node of the requested pool (if multiple)
+
+#-----------------SETTING THE REQUEST FOR THE HARDWARE ALLOCATION----#
+#
+# Indicare qui le richeste hardware
+# numero di nodi (nodes)
+# core per nodo (ppn)
+# massimo tempo di esecuzione (walltime) (HH:MM:SS)
+# nome della coda (q)
+# Put here the requests for the desired hardware: 
+# number of nodes (nodes)
+# cores per node (ppn)
+# walltime, i.e. maximum time of execution (HH:MM:SS) 
+# queue (name_of_the_queue)
+#
+# I LIMITI IN VIGORE DELLE CODE SONO RIPORTATI NEL FILE /etc/motd
+# ACTUAL QUEUE LIMITS ARE REPORTED IN FILE /etc/motd
+#
+#PBS -l nodes=1:ppn=20,walltime=12:00:00 -q gigat
+
+# Nome del job
+# Set the job name
+#PBS -N myjob
+
+# Definizione del file di STDOUT e reindirzzamento dello STDERR
+# Set the output file and merge it to the sterr
+#PBS -o out-hostname-XyZ-N1x1-qsub.txt
+#PBS -j oe
+#PBS -e out-hostname-XyZ-N1x1.txt
+
+
+#------------------SETTING THE ENVIRONMENT----------------------------#
+#
+# Qui si possono introdurre definizioni ambientali, come il 
+# caricamento dei moduli. 
+# ATTENZIONE che questi comandi saranno eseguiti su un nodo solo, 
+# quindi bisogna assicurarsi che le appropriate definizioni ambientali 
+# vengano eseguite su tutti i nodi del calcolo (se più di uno)
+# ad esempio definendole nel file .bashrc
+# Here goes any environmental definition, such as module loading.
+# BEWARE that any command will be executed on one node only, 
+# so take care of propagating any definition to every allocated node.
+# Environmental definitions can be alternatively set in the .bashrc file
+# export MY_ENVIRONMENTAL_VARIABLE=value
+# module load MY_ENVIRONMENTAL_MODULE
+# module load gcc-glibc/7 eigen
+#
+# Esempio per caricare la toolchain gcc-glibc/9
+# export mkPrefix=/u/sw
+# source $mkPrefix/etc/profile
+# module load gcc-glibc/9
+
+
+# PBS parte nella HOME, quindi cambiamo cartella per far partire il job nella
+# cartella corrente
+# Start the job in the current directory (PBS starts in the home folder)
+cd ${PBS_O_WORKDIR}
+
+
+# Let's translate the file ${PBS_NODEFILE}, used by the
+# PBS environment, into something that can be read by mpiexec.
+sort ${PBS_NODEFILE} | uniq -c | awk '{ printf("%s\n", $2); }' > mpd.nodes
+
+
+
+#-------------------RUN THE EXECUTABLE---------------------------------#
+#
+# Nella riga successiva si deve scrivere il/i comando/i di lancio
+# completo di redirezione di input e/o output se necessario
+# e privo di output grafici a schermo
+# YOUR LAUNCH COMMAND BELOW completed with I/O redirection if needed
+
+# 1° example
+#my_executable_command    >   output_file.txt   2>&1
+
+# 2° example, with the MPI library
+#mpiexec -machinefile mpd.nodes -n 20 -npernode 20  my_executable_command > output_file.txt 2>&1
+
+

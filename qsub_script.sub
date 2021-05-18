@@ -1,0 +1,29 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#
+#PBS -l nodes=1:ppn=20,walltime=24:00:00 -q gigat
+
+#PBS -N myjob
+
+#PBS -o out-hostname-XyZ-N1x1-qsub.txt
+#PBS -j oe
+#PBS -e out-hostname-XyZ-N1x1.txt
+
+
+#------------------SETTING THE ENVIRONMENT----------------------------#
+#
+cd ${PBS_O_WORKDIR}
+
+#
+sort ${PBS_NODEFILE} | uniq -c | awk '{ printf("%s\n", $2); }' > mpd.nodes
+
+
+
+#-------------------RUN THE EXECUTABLE---------------------------------#
+# 2 example, with the MPI library
+#mpiexec -machinefile mpd.nodes -n 8 -npernode 8    my_executable_command > output_file.txt 2>&1
+
+./formica.exe #> output_visc_reactive.txt 2>&1
+
+
+#---------------------------------------------------------------------#

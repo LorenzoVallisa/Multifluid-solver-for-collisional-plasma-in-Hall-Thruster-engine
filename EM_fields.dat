@@ -1,0 +1,58 @@
+0.00d0
+0.0d0
+0.020d0 ! Tesla
+300.0d0
+0.0d0
+Dirichlet
+Dirichlet
+0.0d00
+0.0d0
+0.6
+4d-3
+
+! Hall-Thruster FULL (Caso O)
+
+
+0.00d0
+0.0d0
+0.0d0
+300.0d0
+0.0d0
+Dirichlet
+Dirichlet
+0.0d00
+0.0d0
+0.6
+4d-3
+
+! Hall-Thruster
+
+
+0.00d0
+0.0d0
+0.0d0
+0.0d0
+0.0d0
+Dirichlet
+Neumann
+0.0d00
+0.0d0
+0.6
+4d-3
+
+! Mora
+
+
+0.00d0
+0.0d0
+0.00d0 ! Tesla
+0.0d0
+0.0d0
+Dirichlet
+Dirichlet
+0.0d00
+0.0d0
+0.6
+4d-3
+
+! Sod-Shock
