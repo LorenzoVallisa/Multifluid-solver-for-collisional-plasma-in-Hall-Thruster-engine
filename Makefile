@@ -4,7 +4,7 @@
 
 # GNU Compiler
 CMPF  = gfortran -c -cpp -I. -I/usr/local/include -g #-ffpe-trap=zero,invalid,overflow      # -fopenmp
-LNK   = gfortran -llapack -llis -L/students/st_19_20/vallisa/local/lib #-L/u/sw/pkgs/toolchains/gcc-glibc/5/pkgs/lapack/3.6.0/lib64 -lblas -L/u/sw/pkgs/toolchains/gcc-glibc/5/pkgs/lapack/3.6.0/lib64 #-libgfortran#-lc --entry main#gfortran  -L/usr/lib/x86_64-linux-gnu/lapack -llapack -L/usr/lib/x86_64-linux-gnu -llapacke  #-lgfortran# -L/usr/lib/x86_64-linux-gnu/lapack -llapack -L/usr/lib/x86_64-linux-gnu/blas -lblas  #-llapacke# -fopenmp
+LNK   = gfortran -llapack -llis-2.0-30 -L/students/st_19_20/vallisa/local/lib #-L/u/sw/pkgs/toolchains/gcc-glibc/5/pkgs/lapack/3.6.0/lib64 -lblas -L/u/sw/pkgs/toolchains/gcc-glibc/5/pkgs/lapack/3.6.0/lib64 #-libgfortran#-lc --entry main#gfortran  -L/usr/lib/x86_64-linux-gnu/lapack -llapack -L/usr/lib/x86_64-linux-gnu -llapacke  #-lgfortran# -L/usr/lib/x86_64-linux-gnu/lapack -llapack -L/usr/lib/x86_64-linux-gnu/blas -lblas  #-llapacke# -fopenmp
 OPTF = -O0 -Wall -fimplicit-none -fbacktrace #-pg #-fopenmp
 
 # Objects: list of all objects *.o
