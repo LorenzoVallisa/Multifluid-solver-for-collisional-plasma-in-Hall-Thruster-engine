@@ -1,22 +1,18 @@
 The FORMICA Solver
 FORtran MInimal Conservation equAtions Solver
 
-(... or FORMICHE : FORtran MInimal Conservation Hyperbolic Equations solver)
+---------------------------------------------------------------------------------------------
+---------------- Multi-fluid solver for plasma simulation -----------------------------------
+---------------------------------------------------------------------------------------------
 
-----------------
+Solver for Euler set of equations for collisional ions and electrons in their full EM interaction.
 
-# COMPILING:
-################################################
+Downlaod and compile but  NOTE THAT before that you need to install the LIS library (https://www.ssisc.org/lis/index.en.html) and compile it, the dznamic linking is alreadz in the Makefile.
 
-Just type "make".
-Make sure to have a reasonably recent compiler. Note that lapack is called for computing eigenvalues 
-sometimes: this may crash if compiled with some versions of GCC. GCC 6.3.0 and 9.2.0 seem working fine.
-For VKI machines: 
-module load gcc/9.2.0
 
-# TODO:
-################################################
-Substitute numbers "1.0e.." with "1.0d...". "e" is single precision, "d" is double.
+--------- HOW TO SET .inp files according to what zou want to simulate ------------------
+
+
 
 # PDE systems
 ################################################
