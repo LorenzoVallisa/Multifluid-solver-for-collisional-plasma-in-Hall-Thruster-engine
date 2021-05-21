@@ -7,7 +7,7 @@ FORtran MInimal Conservation equAtions Solver
 
 Solver for Euler set of equations for collisional ions and electrons in their full EM interaction.
 
-Downlaod and compile but  NOTE THAT before that you need to install the LIS library (https://www.ssisc.org/lis/index.en.html) and compile it, the dznamic linking is alreadz in the Makefile.
+Downlaod and compile but  NOTE THAT before that you need to install the LIS library (https://www.ssisc.org/lis/index.en.html) and compile it, the dynamic linking is already in the Makefile.
 
 
 --------- HOW TO SET .inp files according to what zou want to simulate ------------------
