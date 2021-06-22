@@ -1,11 +1,7 @@
-The FORMICA Solver
-FORtran MInimal Conservation equAtions Solver
+# Multi-fluid solver for collisional plasma simulation in a full electromagnetic interaction inside an Hall-Thurster engine
 
----------------------------------------------------------------------------------------------
----------------- Multi-fluid solver for plasma simulation -----------------------------------
----------------------------------------------------------------------------------------------
-
-Solver for Euler set of equations for collisional ions and electrons in their full EM interaction.
+Solver for Euler set of equations for collisional ions and electrons in their full EM interaction. Electrons and ions are hence solved without viscous dissipation closure term,
+each by means of momentum equations. Electric source term is then computed thourgh solution of Possion equation, whereas magnetic filed is constant and imposed.
 
 Downlaod and compile but  NOTE THAT before that you need to install the LIS library (https://www.ssisc.org/lis/index.en.html) and compile it, the dynamic linking is already in the Makefile.
 
