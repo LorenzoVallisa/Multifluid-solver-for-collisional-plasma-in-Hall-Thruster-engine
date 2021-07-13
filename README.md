@@ -33,27 +33,5 @@ N_int = N_cells - 1 = number of interfaces
 
 First and last interfaces coincide with the limits of the domain, x_min, x_max
 
-# HOW to add a PDE - say "my_pde_123"
-################################################
-
-1) copy an existing PDE module such as pde_euler.f90 to pde_my_pde_123.f90.
-2) write inside it the relevant functions (copy Euler)
-3) Load it into the pde.f90 module, with: "USE PDE_MY_PDE"
-4) Include it in the Makefile (the pde.f90 module will need it)
-5) Introduce a global bool variable in the gobal.f90, such as my_pde_123_BOOL
-6) In the initialization file, insert a line that activates this bool when the
-   input file is read, AND set in the same place the number of equations...
-7) In the pde.f90, put the system boolean in the IF THEN ELSE statements
-8) I think you should be good to go.
-
-# FAQ
-################################################
-
-Q: ** On entry to DGEBAL parameter number  3 had an illegal value
-A: This comes from lapack and you are probably trying to compute the eigenvalues of the Jacobian.
-   Probably the solution is weird or has crashed at a certain timestep, so the eigenvalues 
-   computation also crashes, with this message.
-   Try a smaller timestep.
-
-
+There is also the possibility to run simulation using a non-uniform grid (Chebyshev's grid points)
 
