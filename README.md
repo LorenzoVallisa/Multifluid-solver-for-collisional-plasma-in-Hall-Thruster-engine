@@ -8,11 +8,11 @@ Downlaod and compile but  NOTE THAT before that you need to install the LIS libr
 # PDE systems
 ################################################
 
-Euler system has 4 equations:
+Euler system has 4 equations:\
 rho    --- density\
 rho ux --- x-momentum\
 rho uy --- y-momentum\
-rho E  --- total energy\
+rho E  --- total energy
 
 All coupled with resolution of electric field through the Possion equation for electrostatic potential
 
