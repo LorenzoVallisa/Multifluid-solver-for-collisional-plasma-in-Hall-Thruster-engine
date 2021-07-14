@@ -8,7 +8,7 @@ This software uses the LIS library for iterative methods for linear system.
 Downlaod and install the LIS library (https://www.ssisc.org/lis/index.en.html): in the pdf file it is explained what to do.
 The *configure* that worked for me it is the following:
 
-./configure --enable-f90 --enable-quad --enable-longdouble --enable-shared --enable-gprof --prefix=/path/to/your/code/folder
+	$ ./configure --enable-f90 --enable-quad --enable-longdouble --enable-shared --enable-gprof --prefix=/path/to/your/code/folder
 
 after running
 
@@ -16,7 +16,7 @@ after running
 
 you may also run
 
-libtool --finish /path/to/your/local/lib/lib
+	$ libtool --finish /path/to/your/local/lib/lib
 
 
 
