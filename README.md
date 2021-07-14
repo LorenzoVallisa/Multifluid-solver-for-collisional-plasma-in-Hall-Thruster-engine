@@ -12,7 +12,7 @@ The *configure* that worked for me it is the following:
 
 after running
 
-make install
+	$ make install
 
 you may also run
 
